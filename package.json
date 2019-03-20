@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf ./dist && webpack --config webpack.prod.config.js",
-    "build-dev": "rm -rf ./dist && webpack --config webpack.config.js",
-    "start": "webpack-dev-server"
+    "build": "rm -rf ./dist && webpack --config config/webpack.prod.config.js",
+    "build-dev": "rm -rf ./dist && webpack --config config/webpack.dev.js",
+    "start": "webpack-dev-server --config config/webpack.dev.config.js"
   },
   "keywords": [
     "webpack"
@@ -29,6 +29,7 @@
     "p-min-delay": "^2.0.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-router-config": "^5.0.0",
     "react-router-dom": "^4.3.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.0.1",

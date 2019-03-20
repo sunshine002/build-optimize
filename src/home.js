@@ -2,8 +2,10 @@
 /**
  * 点击按钮时动态加载组件
  */
-import React, { Component } from "react";
 
+//  import _ from 'lodash';
+
+import React, { Component } from "react";
 class A extends Component {
     constructor(props) {
         super(props);
@@ -27,6 +29,7 @@ class A extends Component {
             <div>
                 <button type='button' onClick={this.clickFn}>点击我</button>
                 <div>{this.state.importInfo}</div>
+                <p>{_.join(['Hello', 'webpack'], ' ')}</p>
             </div>);
     }
 
