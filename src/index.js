@@ -8,8 +8,8 @@ import { Switch } from 'react-router'
 import { matchRoutes, renderRoutes } from 'react-router-config';
 
 // 导入动态页面组件
-import DynamicPage from './dynamicPage';
-import ReactRecommend from './react-recommend';
+import DynamicPage from './loadable-dynamic';
+import ReactRecommend from './react-recommend-dynamic';
 
 import Home from './home';
 
@@ -19,7 +19,7 @@ import Error from './error';
 import P1 from './childs/p1';
 import P2 from './childs/p2';
 
-import routes from './route';
+// import routes from './route';
 
 // 配置路由对象：1. 可通过在入口页中定义routes对象 2. 把此对象进行拆分，通过import导入
 // const routes = [
@@ -74,6 +74,7 @@ render(
       {/**
         非配置方式实现路由的配置及组件的渲染
       */}
+      
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={DynamicPage} />

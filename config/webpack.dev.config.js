@@ -7,6 +7,10 @@ config.devtool = 'cheap-module-source-map';
 
 config.mode = 'development';
 
+config.devServer={
+    historyApiFallback: true,
+}
+
 config.plugins.push()
 
 module.exports = config

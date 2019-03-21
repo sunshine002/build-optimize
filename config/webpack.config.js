@@ -13,12 +13,14 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
     entry: {
-        commons: ['lodash', 'react'],
+        // moment:'moment',
+        // verdon:['react', 'react-dom'],
+        commons: ['lodash'],
         index: './src/index.js',
         another: './src/another-module.js',
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, '../dist'),
         chunkFilename: "[name].chunk.js"
     },
@@ -28,6 +30,7 @@ module.exports = {
             // 默认index.html
             template: './index.html',
             parallel: true,
+            // chunks:['commons', 'verdon']
         }),
 
         // 压缩
@@ -35,6 +38,10 @@ module.exports = {
             sourceMap: true,
             include: /\/src/
         }),
+
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+
+        // new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/),
 
         // webpack4.0+
         // new webpack.optimize.SplitChunksPlugin({
@@ -53,7 +60,7 @@ module.exports = {
         //             // minChunks 当文件出现的次数大于2时，才将该文件视为依赖文件
         //             minChunks: 2,
         //             // name 分割出来的文件名，若不指定name，以缓存组的名字作为分割出来的文件名，name作用于chunkFilename
-        //             name: 'commons',
+        //             name: 'lodash',
         //             // minSize 当文件的大小大于该值时，才执行该缓存组(单位为kb)
         //             // minSize: 1,
         //             // priority 规定打包的优先级(数值越大优先级越高)

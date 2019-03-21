@@ -18,7 +18,6 @@ export default (props) => (
     <Suspense fallback={<div>Loading...</div>}>
         <LoadableComponent />
         {/* 嵌套路由的实现：非配置方式 */}
-
         <Router>
             <div>
                 <li>
@@ -42,27 +41,27 @@ export default (props) => (
         <li>
             <Link to="/react-recommend/p2">测试路由拆分 - p2页</Link>
         </li>
-
+ */}
         {
             // 配置方式渲染组件实现1：用react-router-confgi插件中的renderRoutes方式实现
-            renderRoutes(routes)
+            // renderRoutes(routes)
         }
 
         {
             // 配置方式渲染组件实现2：遍历routes对象，循环输出多个<Route>对象
-            props.routes.map((route, index) => (
-                <Route
-                    key={index}
-                    path={route.path}
-                    exact={route.exact}
-                    // component={route.component}
-                    render={props => (
-                        // pass the sub-routes down to keep nesting
-                        <route.component {...props} routes={route.routes} />
-                    )}
-                />
-            ))
+            // props.routes.map((route, index) => (
+            //     <Route
+            //         key={index}
+            //         path={route.path}
+            //         exact={route.exact}
+            //         // component={route.component}
+            //         render={props => (
+            //             // pass the sub-routes down to keep nesting
+            //             <route.component {...props} routes={route.routes} />
+            //         )}
+            //     />
+            // ))
         }
- */}    
+    
 </Suspense>
 )
