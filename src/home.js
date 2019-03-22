@@ -3,7 +3,7 @@
  * 点击按钮时动态加载组件
  */
 
-//  import _ from 'lodash';
+ import _ from 'lodash';
 
 import React, { Component } from "react";
 import moment from 'moment';

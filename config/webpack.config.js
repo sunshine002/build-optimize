@@ -13,7 +13,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
     entry: {
-        // moment:'moment',
         // verdon:['react', 'react-dom'],
         commons: ['lodash'],
         index: './src/index.js',
